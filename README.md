@@ -1,7 +1,6 @@
-# obj-to-binvox-to-np-array
+# objfile-to-binvox-to-nparray
 
-This is a set of tools to help transform an 3D object file like a car or hand into a 3D numpy array by first transforming it into a voxal space (think mind craft) and then import it into python as an . All credit goes to:
-
+This is a set of tools to help transform a 3D object file like a car or hand into a 3D numpy array by first transforming it into a voxal space (think mind craft) and then import it into python as an numpy array.
 
 ## Obj-to-vox
 
@@ -14,7 +13,7 @@ convert from 3D object to vox space: double-click on the file voxprius-high-res.
 
 	rem delete any previous 
 	del toyota-prius.binvox
-	
+
 	rem use default resolution of 256
 	binvox toyota-prius.obj
 
@@ -33,10 +32,10 @@ represented as dense 3-dimensional Numpy arrays in Python.
 
 Suppose you have a voxelized car model, `toyota-prius.binvox` 
 
-Then
-
+Then:
+	
 	import binvox_rw
-	with open('chair.binvox', 'rb') as f:
+	with open('toyota-prius.binvox', 'rb') as f:
     	model = binvox_rw.read_as_3d_array(f)
 
 You get the idea. `model.data` has the boolean 3D array. You can then
@@ -58,4 +57,4 @@ software from http://www.patrickmin.com/minecraft/
 GLUT DLL from http://www.xmission.com/~nate/glut.html
 hand model from http://shapes.aim-at-shape.net/viewgroup.php?id=354#
 chevalier model from who knows where.
-Daniel Maturana for the binvox-rw-py python module
+Daniel Maturana for the binvox-rw-py python module: https://github.com/dimatura/binvox-rw-py
